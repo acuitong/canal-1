@@ -22,6 +22,25 @@ public class DatasourceConfig {
     private String                                   username;                                 // jdbc username
     private String                                   password;                                 // jdbc password
     private Integer                                  maxActive    = 3;                         // 连接池最大连接数,默认为3
+    // 链接重试机制
+    private boolean                                  testWhileIdle = true;
+    private int timeBetweenEvictionRunsMillis = 28800;
+
+    public boolean getTestWhileIdle() {
+        return testWhileIdle;
+    }
+
+    public void setTestWhileIdle(boolean testWhileIdle) {
+        this.testWhileIdle = testWhileIdle;
+    }
+
+    public int getTimeBetweenEvictionRunsMillis() {
+        return timeBetweenEvictionRunsMillis;
+    }
+
+    public void setTimeBetweenEvictionRunsMillis(int timeBetweenEvictionRunsMillis) {
+        this.timeBetweenEvictionRunsMillis = timeBetweenEvictionRunsMillis;
+    }
 
     public String getDriver() {
         return driver;

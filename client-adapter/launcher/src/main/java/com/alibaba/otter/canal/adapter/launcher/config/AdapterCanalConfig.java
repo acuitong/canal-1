@@ -64,7 +64,8 @@ public class AdapterCanalConfig extends CanalClientConfig {
                 ds.setMinIdle(1);
                 ds.setMaxActive(datasourceConfig.getMaxActive());
                 ds.setMaxWait(60000);
-                ds.setTimeBetweenEvictionRunsMillis(60000);
+                ds.setTestWhileIdle(datasourceConfig.getTestWhileIdle());
+                ds.setTimeBetweenEvictionRunsMillis(datasourceConfig.getTimeBetweenEvictionRunsMillis());
                 ds.setMinEvictableIdleTimeMillis(300000);
                 ds.setValidationQuery("select 1");
                 try {
